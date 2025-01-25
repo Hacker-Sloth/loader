@@ -1953,7 +1953,7 @@ geofsAddonAircraft.runMig21 = function(){
 	controls.optionalAnimatedPart.target = 1
 }
 mig21Li = document.createElement("li");
-mig21Li.innerHTML = '<div><img src="http://atlas-content-cdn.pixelsquid.com/stock-images/russian-fighter-mig-21-fishbed-jet-q1ylV3E-600.jpg">Mikoyan-Gurevich MiG-21 "Fishbed"</div>';
+mig21Li.innerHTML = '<div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuOcyQ7yhc_de_1KC4cuingXfV7rNWPite9w&s">Boeing 737-100</div>';
 mig21Li.addEventListener("click", geofsAddonAircraft.runMig21);
 document.getElementsByClassName("geofs-list geofs-toggle-panel geofs-aircraft-list")[0].appendChild(mig21Li)
 mig21Li.setAttribute("data-aircraft", 7)
