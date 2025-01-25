@@ -760,6 +760,8 @@ setInterval(
     var b737geardown = "https://raw.githubusercontent.com/superzpmax/GEOFS-liveryselector/main/b7372002.glb"
     var b737afterburner = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-21_blowtorch.glb"
     var b737cockpit = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-21_cockpit.glb"
+    var b737droptank = ""
+    var b737nozzle = ""
     var MsG = "https://raw.githubusercontent.com/Hacker-Sloth/735/refs/heads/main/735.gltf"
     var MsGprop = ""
     var MsGcockpit = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/morane-saulnier_g_cockpit.glb"
