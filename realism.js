@@ -423,35 +423,35 @@ setInterval(
     console.log("Modified by NVB9 and Kolos26");
     
     //variable to tell if the script has run or not
-    var b737Sounds = 0
+    var bb737Sounds = 0
     soundInt = null;
     tcasIntervalAnnounce = null;
     effectInterval = null;
     accelInt = null;
     flexInterval = null;
     
-    function checkForBoeing737() {
-    if (geofs.aircraft.instance.id == 4 || geofs.aircraft.instance.id == 3054) { //if the aircraft currently being flown is a 737
-    if (b737Sounds != geofs.aircraft.instance.id){ //if the script hasn't already run on this aircraft
+    function checkForBoeingb737() {
+    if (geofs.aircraft.instance.id == 4 || geofs.aircraft.instance.id == 3054) { //if the aircraft currently being flown is a b737
+    if (bb737Sounds != geofs.aircraft.instance.id){ //if the script hasn't already run on this aircraft
     //preventing errors
             clearInterval(soundInt);
             clearInterval(tcasIntervalAnnounce);
             clearInterval(accelInt);
             clearInterval(flexInterval);
     //running the script
-    var script737 = document.createElement('script'); 
-    script737.src="https://raw.githack.com/AbnormalHuman/GeoFS-737-Immersion-SFX/main/index.js";
-    document.body.appendChild(script737);
-    script737.onload = function(){clearInterval(tcasIntervalAnnounce)};
+    var scriptb737 = document.createElement('script'); 
+    scriptb737.src="https://raw.githack.com/AbnormalHuman/GeoFS-b737-Immersion-SFX/main/index.js";
+    document.body.appendChild(scriptb737);
+    scriptb737.onload = function(){clearInterval(tcasIntervalAnnounce)};
     
     //script has run now, so we change scriptHasRun to avoid having the script execute multiple times per aircraft instance
     //this avoids massive lag
-    b737Sounds = geofs.aircraft.instance.id
+    bb737Sounds = geofs.aircraft.instance.id
           }
        }
-    //if the aircraft isn't a 737
+    //if the aircraft isn't a b737
     else {
-    //clearing the script when the aircraft isn't a 737 to avoid filling up the console with errors
+    //clearing the script when the aircraft isn't a b737 to avoid filling up the console with errors
     if (typeof soundInt != undefined) {
        clearInterval(soundInt)
        clearInterval(tcasIntervalAnnounce)
@@ -460,14 +460,14 @@ setInterval(
     } else {
     void(0)
     };
-    //making sure the script can run again next time a 737 is selected
-        b737Sounds = 0
+    //making sure the script can run again next time a b737 is selected
+        bb737Sounds = 0
        }
     }
     
     //running the above function once per second
     checkInterval = setInterval(function(){
-    checkForBoeing737()
+    checkForBoeingb737()
     }, 1000)
     
     var b777sounds = new Boolean(0)
@@ -756,12 +756,10 @@ setInterval(
     var f14cockpit = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f-14a_cockpit.glb"
     var f14burner = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f-14a-ab.glb"
     var e7antenna = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/e-7_wedgetail_antenna.glb"
-    var 737gearup = "https://raw.githubusercontent.com/superzpmax/GEOFS-liveryselector/main/7372002.glb"
-    var 737geardown = "https://raw.githubusercontent.com/superzpmax/GEOFS-liveryselector/main/7372002.glb"
-    var 737afterburner = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-21_blowtorch.glb"
-    var 737droptank = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-21_fuel_tank.glb"
-    var 737nozzle = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-21_nozzle.glb"
-    var 737cockpit = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-21_cockpit.glb"
+    var b737gearup = "https://raw.githubusercontent.com/superzpmax/GEOFS-liveryselector/main/b7372002.glb"
+    var b737geardown = "https://raw.githubusercontent.com/superzpmax/GEOFS-liveryselector/main/b7372002.glb"
+    var b737afterburner = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-21_blowtorch.glb"
+    var b737cockpit = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-21_cockpit.glb"
     var MsG = "https://raw.githubusercontent.com/Hacker-Sloth/735/refs/heads/main/735.gltf"
     var MsGprop = ""
     var MsGcockpit = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/morane-saulnier_g_cockpit.glb"
@@ -780,7 +778,7 @@ setInterval(
     geofsAddonAircraft.isTruck = 0
     geofsAddonAircraft.isF14A = 0
     geofsAddonAircraft.isE7 = 0
-    geofsAddonAircraft.is737 = 0
+    geofsAddonAircraft.isb737 = 0
     geofsAddonAircraft.isMSG = 0
     geofsAddonAircraft.isF117 = 0
     geofsAddonAircraft.isMiG25 = 0
@@ -946,86 +944,86 @@ setInterval(
         }
     };
 
-    geofs.debug.create737Nozzle = function() {
-       geofs.debug.737Nozzle = {};
-        geofs.debug.737Nozzle.model = new geofs.api.Model(737nozzle)
+    geofs.debug.createb737Nozzle = function() {
+       geofs.debug.b737Nozzle = {};
+        geofs.debug.b737Nozzle.model = new geofs.api.Model(b737nozzle)
     }
-    geofs.debug.load737Nozzle = function() {
-       geofs.debug.737Nozzle || geofs.debug.create737Nozzle()
+    geofs.debug.loadb737Nozzle = function() {
+       geofs.debug.b737Nozzle || geofs.debug.createb737Nozzle()
         try {
             var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
                 d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
-            geofs.debug.737Nozzle.model.setPositionOrientationAndScale(c, d);
+            geofs.debug.b737Nozzle.model.setPositionOrientationAndScale(c, d);
         } catch (e) {
             throw("Mig-21 Nozzle loading error. " + e)
         }
     };
-    geofs.debug.create737Cockpit = function() {
-       geofs.debug.737Cockpit = {};
-        geofs.debug.737Cockpit.model = new geofs.api.Model(737cockpit)
+    geofs.debug.createb737Cockpit = function() {
+       geofs.debug.b737Cockpit = {};
+        geofs.debug.b737Cockpit.model = new geofs.api.Model(b737cockpit)
     }
-    geofs.debug.load737Cockpit = function() {
-       geofs.debug.737Cockpit || geofs.debug.create737Cockpit()
+    geofs.debug.loadb737Cockpit = function() {
+       geofs.debug.b737Cockpit || geofs.debug.createb737Cockpit()
         try {
             var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
                 d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
-            geofs.debug.737Cockpit.model.setPositionOrientationAndScale(c, d);
+            geofs.debug.b737Cockpit.model.setPositionOrientationAndScale(c, d);
         } catch (e) {
             throw("Mig-21 Cockpit loading error. " + e)
         }
     };
-    geofs.debug.create737GearUp = function() {
-       geofs.debug.737GearUp = {};
-        geofs.debug.737GearUp.model = new geofs.api.Model(737gearup)
+    geofs.debug.createb737GearUp = function() {
+       geofs.debug.b737GearUp = {};
+        geofs.debug.b737GearUp.model = new geofs.api.Model(b737gearup)
     }
-    geofs.debug.load737GearUp = function() {
-       geofs.debug.737GearUp || geofs.debug.create737GearUp()
+    geofs.debug.loadb737GearUp = function() {
+       geofs.debug.b737GearUp || geofs.debug.createb737GearUp()
         try {
             var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
                 d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
-            geofs.debug.737GearUp.model.setPositionOrientationAndScale(c, d);
+            geofs.debug.b737GearUp.model.setPositionOrientationAndScale(c, d);
         } catch (e) {
             throw("Mig-21 Gear Up loading error. " + e)
         }
     };
-    geofs.debug.create737GearDown = function() {
-       geofs.debug.737GearDown = {};
-        geofs.debug.737GearDown.model = new geofs.api.Model(737geardown)
+    geofs.debug.createb737GearDown = function() {
+       geofs.debug.b737GearDown = {};
+        geofs.debug.b737GearDown.model = new geofs.api.Model(b737geardown)
     }
-    geofs.debug.load737GearDown = function() {
-       geofs.debug.737GearDown || geofs.debug.create737GearDown()
+    geofs.debug.loadb737GearDown = function() {
+       geofs.debug.b737GearDown || geofs.debug.createb737GearDown()
         try {
             var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
                 d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
-            geofs.debug.737GearDown.model.setPositionOrientationAndScale(c, d);
+            geofs.debug.b737GearDown.model.setPositionOrientationAndScale(c, d);
         } catch (e) {
             throw("Mig-21 Gear Down loading error. " + e)
         }
     };
-    geofs.debug.create737AB = function() {
-       geofs.debug.737AB = {};
-        geofs.debug.737AB.model = new geofs.api.Model(737afterburner)
+    geofs.debug.createb737AB = function() {
+       geofs.debug.b737AB = {};
+        geofs.debug.b737AB.model = new geofs.api.Model(b737afterburner)
     }
-    geofs.debug.load737AB = function() {
-       geofs.debug.737AB || geofs.debug.create737AB()
+    geofs.debug.loadb737AB = function() {
+       geofs.debug.b737AB || geofs.debug.createb737AB()
         try {
             var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
                 d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
-            geofs.debug.737AB.model.setPositionOrientationAndScale(c, d);
+            geofs.debug.b737AB.model.setPositionOrientationAndScale(c, d);
         } catch (e) {
             throw("Mig-21 Afterburner loading error. " + e)
         }
     };
-    geofs.debug.create737Tank = function() {
-       geofs.debug.737Tank = {};
-        geofs.debug.737Tank.model = new geofs.api.Model(737droptank)
+    geofs.debug.createb737Tank = function() {
+       geofs.debug.b737Tank = {};
+        geofs.debug.b737Tank.model = new geofs.api.Model(b737droptank)
     }
-    geofs.debug.load737Tank = function() {
-       geofs.debug.737Tank || geofs.debug.create737Tank()
+    geofs.debug.loadb737Tank = function() {
+       geofs.debug.b737Tank || geofs.debug.createb737Tank()
         try {
             var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
                 d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
-            geofs.debug.737Tank.model.setPositionOrientationAndScale(c, d);
+            geofs.debug.b737Tank.model.setPositionOrientationAndScale(c, d);
         } catch (e) {
             throw("Mig-21 Drop Tank loading error. " + e)
         }
@@ -1422,7 +1420,7 @@ setInterval(
       if (geofs.aircraft.instance.id == 18 && geofs.animation.values.kias > 50 && geofs.animation.values.accZ > 60 && geofs.cons == true && geofsAddonAircraft.isFA18 == 1 ) {
         geofs.debug.loadConConesSmall()
       }
-      if (geofs.aircraft.instance.id == 7 && geofs.animation.values.kias > 50 && geofs.animation.values.accZ > 60 && geofs.cons == true && geofsAddonAircraft.is737 != 1) {
+      if (geofs.aircraft.instance.id == 7 && geofs.animation.values.kias > 50 && geofs.animation.values.accZ > 60 && geofs.cons == true && geofsAddonAircraft.isb737 != 1) {
         geofs.debug.loadConConesSmall()
       }
       if (geofs.aircraft.instance.id == 2857 && geofs.animation.values.kias > 50 && geofs.animation.values.accZ > 60 && geofs.cons == true) {
@@ -1491,22 +1489,22 @@ setInterval(
       if (geofsAddonAircraft.isE7 == 1) {
         geofs.debug.loadE7Antenna()
       }
-      if (geofsAddonAircraft.is737 == 1 && geofs.animation.values.gearTarget == 0 && geofs.animation.values.view != "cockpit") {
-          geofs.debug.load737GearDown()
-          geofs.debug.load737Nozzle()
+      if (geofsAddonAircraft.isb737 == 1 && geofs.animation.values.gearTarget == 0 && geofs.animation.values.view != "cockpit") {
+          geofs.debug.loadb737GearDown()
+          geofs.debug.loadb737Nozzle()
       }
-      if (geofsAddonAircraft.is737 == 1 && geofs.animation.values.gearTarget == 1 && geofs.animation.values.view != "cockpit") {
-          geofs.debug.load737GearUp()
-          geofs.debug.load737Nozzle()
+      if (geofsAddonAircraft.isb737 == 1 && geofs.animation.values.gearTarget == 1 && geofs.animation.values.view != "cockpit") {
+          geofs.debug.loadb737GearUp()
+          geofs.debug.loadb737Nozzle()
       }
-      if (geofsAddonAircraft.is737 == 1 && geofs.animation.values.view == "cockpit") {
-          geofs.debug.load737Cockpit()
+      if (geofsAddonAircraft.isb737 == 1 && geofs.animation.values.view == "cockpit") {
+          geofs.debug.loadb737Cockpit()
       }
-      if (geofsAddonAircraft.is737 == 1 && geofs.animation.values.rpm >= 9100) {
-          geofs.debug.load737AB()
+      if (geofsAddonAircraft.isb737 == 1 && geofs.animation.values.rpm >= 9100) {
+          geofs.debug.loadb737AB()
       }
-      if (geofsAddonAircraft.is737 == 1 && controls.optionalAnimatedPart.target == 1) {
-          geofs.debug.load737Tank()
+      if (geofsAddonAircraft.isb737 == 1 && controls.optionalAnimatedPart.target == 1) {
+          geofs.debug.loadb737Tank()
       }
       if (geofsAddonAircraft.isMSG == 1 && geofs.animation.values.view != "cockpit") {
           geofs.debug.loadMSG();
@@ -1932,7 +1930,7 @@ geofsAddonAircraft.runE7 = function(){
    console.log("Loading E-7 Wedgetail AEW&C.")
 }
 e7Li = document.createElement("li");
-e7Li.innerHTML = '<div><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/B737_AEW%26C_Wedgetail_cut_model.PNG/220px-B737_AEW%26C_Wedgetail_cut_model.PNG">E-7 Wedgetail AEW&C</div>';
+e7Li.innerHTML = '<div><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Bb737_AEW%26C_Wedgetail_cut_model.PNG/220px-Bb737_AEW%26C_Wedgetail_cut_model.PNG">E-7 Wedgetail AEW&C</div>';
 e7Li.addEventListener("click", geofsAddonAircraft.runE7);
 //this works actually
 e7Li.setAttribute("data-aircraft", 3292)
@@ -1948,20 +1946,20 @@ geofsAddonAircraft.isE7 = 0
 }
 e7int = setInterval(function(){runE7Wedgetail()},100)
 //-----MiG-21 Fishbed-----------------------------------------------------------------------------------------------------
-geofsAddonAircraft.run737 = function(){
+geofsAddonAircraft.runb737 = function(){
 	console.log("Loading MiG-21 Fishbed. Model credit manilov.ap.")
 	controls.optionalAnimatedPart.target = 1
 }
-737Li = document.createElement("li");
-737Li.innerHTML = '<div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuOcyQ7yhc_de_1KC4cuingXfV7rNWPite9w&s">Boeing 737-100</div>';
-737Li.addEventListener("click", geofsAddonAircraft.run737);
-document.getElementsByClassName("geofs-list geofs-toggle-panel geofs-aircraft-list")[0].appendChild(737Li)
-737Li.setAttribute("data-aircraft", 4)
-737Li.setAttribute("data-livery", 1)
+b737Li = document.createElement("li");
+b737Li.innerHTML = '<div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuOcyQ7yhc_de_1KC4cuingXfV7rNWPite9w&s">Boeing b737-100</div>';
+b737Li.addEventListener("click", geofsAddonAircraft.runb737);
+document.getElementsByClassName("geofs-list geofs-toggle-panel geofs-aircraft-list")[0].appendChild(b737Li)
+b737Li.setAttribute("data-aircraft", 4)
+b737Li.setAttribute("data-livery", 1)
 
-geofs.737instruments = new Boolean(0)
-//clearInterval(737Interval)
-function run737() {
+geofs.b737instruments = new Boolean(0)
+//clearInterval(b737Interval)
+function runb737() {
 if (geofs.aircraft.instance.id == 4 && geofs.aircraft.instance.liveryId == 1) {
 	geofs.aircraft.instance.definition.parts[2].zeroLiftIncidence = 90
 	geofs.aircraft.instance.definition.parts[3].zeroLiftIncidence = 90
@@ -2005,12 +2003,12 @@ geofs.aircraft.instance.setup.instruments = {
 		"flaps": "",
 		"spoilers": ""
 }
-if (geofs.737instruments == 0) {
+if (geofs.b737instruments == 0) {
    instruments.init(geofs.aircraft.instance.setup.instruments)
-   geofs.737instruments = 1
+   geofs.b737instruments = 1
 }
 setTimeout(() => {
-   geofsAddonAircraft.is737 = 1
+   geofsAddonAircraft.isb737 = 1
  },5000)
 setTimeout(() => {
    geofs.aircraft.instance.definition.parts[0].animations[0] = {"type": "hide", "value": "rpm", "gt": -1}
@@ -2022,11 +2020,11 @@ if (geofs.animation.values.view == "cockpit") {
 	geofs.camera.currentDefinition.position[2] = geofs.aircraft.instance.definition.cameras.cockpit.position[2] - 0.15
    }
 } else {
-   geofsAddonAircraft.is737 = 0
-	geofs.737instruments = 0
+   geofsAddonAircraft.isb737 = 0
+	geofs.b737instruments = 0
 }
 }
-737Interval = setInterval(function(){run737()},100)
+b737Interval = setInterval(function(){runb737()},100)
 //-----Morane-Saulneir "G"-----------------------------------------------------------------------------------------------------
 geofsAddonAircraft.isMsG = 0
 geofsAddonAircraft.runMsG = function(){
