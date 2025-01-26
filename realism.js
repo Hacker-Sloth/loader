@@ -1812,7 +1812,7 @@ geofsAddonAircraft.runfgr4 = function(){
    console.log("Loading MiG-17. Model credit manilov.ap")
 }
 fgr4Li = document.createElement("li");
-fgr4Li.innerHTML = '<div><img src="https://finescale.com/~/media/images/workbench-reviews/2020/february-2020/fsmwb1219_zvezda_fgr4_01.jpg">Mikoyan-Gurevich MiG-17 "Fresco"</div>';
+fgr4Li.innerHTML = '<div><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/RAF_Eurofighter_EF-2000_Typhoon_F2_Lofting-1.jpg">Eurofighter Typhoon</div>';
 fgr4Li.addEventListener("click", geofsAddonAircraft.runfgr4);
 //this works actually
 fgr4Li.setAttribute("data-aircraft", 3)
