@@ -740,10 +740,10 @@ setInterval(
     var f18GearDown = "https://raw.githubusercontent.com/Hacker-Sloth/c17/main/dodge_challenger_rt_scat_pack_widebody_free.glb"
     var f18Cockpit = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f-18-cockpit.glb"
     var f18Airbrake = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f-18-airbrake.glb"
-    var mig17GearUp = "https://raw.githubusercontent.com/Hacker-Sloth/F15I/refs/heads/main/scene.gltf"
-    var mig17GearDown = "https://raw.githubusercontent.com/Hacker-Sloth/F15I/refs/heads/main/scene.gltf"
-    var mig17speedbrake = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-17-speedbrakes.glb"
-    var mig17Afterburner = ""
+    var fgr4GearUp = "https://raw.githubusercontent.com/Hacker-Sloth/a10/refs/heads/main/scene.gltf"
+    var fgr4GearDown = "https://raw.githubusercontent.com/Hacker-Sloth/a10/refs/heads/main/scene.gltf"
+    var fgr4speedbrake = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-17-speedbrakes.glb"
+    var fgr4Afterburner = ""
     var truckModel = "https://geo-fs.com/models/objects/vehicles/truck/multiplayer.glb"
     var su27airbrake = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/su-27_airbrake.glb"
     var f14airbrake = "https://raw.githubusercontent.com/Hacker-Sloth/beluga/refs/heads/main/scene.gltf"
@@ -776,7 +776,7 @@ setInterval(
     
     let geofsAddonAircraft = {};
     geofsAddonAircraft.isFA18 = 0
-    geofsAddonAircraft.isMig17 = 0
+    geofsAddonAircraft.isfgr4 = 0
     geofsAddonAircraft.isTruck = 0
     geofsAddonAircraft.isF14A = 0
     geofsAddonAircraft.isE7 = 0
@@ -1231,58 +1231,58 @@ setInterval(
         }
     };
         
-    geofs.debug.createMiG17GearUp = function() {
-       geofs.debug.MiG17GearUp = {};
-        geofs.debug.MiG17GearUp.model = new geofs.api.Model(mig17GearUp)
+    geofs.debug.createfgr4GearUp = function() {
+       geofs.debug.fgr4GearUp = {};
+        geofs.debug.fgr4GearUp.model = new geofs.api.Model(fgr4GearUp)
     }
-    geofs.debug.loadMiG17GearUp = function() {
-       geofs.debug.MiG17GearUp || geofs.debug.createMiG17GearUp()
+    geofs.debug.loadfgr4GearUp = function() {
+       geofs.debug.fgr4GearUp || geofs.debug.createfgr4GearUp()
         try {
             var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
                 d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
-            geofs.debug.MiG17GearUp.model.setPositionOrientationAndScale(c, d);
+            geofs.debug.fgr4GearUp.model.setPositionOrientationAndScale(c, d);
         } catch (e) {
             throw("MiG-17 Gear Up loading error. " + e)
         }
     };
-    geofs.debug.createMiG17GearDown = function() {
-       geofs.debug.MiG17GearDown = {};
-        geofs.debug.MiG17GearDown.model = new geofs.api.Model(mig17GearDown)
+    geofs.debug.createfgr4GearDown = function() {
+       geofs.debug.fgr4GearDown = {};
+        geofs.debug.fgr4GearDown.model = new geofs.api.Model(fgr4GearDown)
     }
-    geofs.debug.loadMiG17GearDown = function() {
-       geofs.debug.MiG17GearDown || geofs.debug.createMiG17GearDown()
+    geofs.debug.loadfgr4GearDown = function() {
+       geofs.debug.fgr4GearDown || geofs.debug.createfgr4GearDown()
         try {
             var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
                 d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
-            geofs.debug.MiG17GearDown.model.setPositionOrientationAndScale(c, d);
+            geofs.debug.fgr4GearDown.model.setPositionOrientationAndScale(c, d);
         } catch (e) {
             throw("MiG-17 Gear Down loading error. " + e)
         }
     };
-    geofs.debug.createMiG17AB = function() {
-       geofs.debug.MiG17AB = {};
-        geofs.debug.MiG17AB.model = new geofs.api.Model(mig17Afterburner)
+    geofs.debug.createfgr4AB = function() {
+       geofs.debug.fgr4AB = {};
+        geofs.debug.fgr4AB.model = new geofs.api.Model(fgr4Afterburner)
     }
-    geofs.debug.loadMiG17AB = function() {
-       geofs.debug.MiG17AB || geofs.debug.createMiG17AB()
+    geofs.debug.loadfgr4AB = function() {
+       geofs.debug.fgr4AB || geofs.debug.createfgr4AB()
         try {
             var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
                 d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
-            geofs.debug.MiG17AB.model.setPositionOrientationAndScale(c, d);
+            geofs.debug.fgr4AB.model.setPositionOrientationAndScale(c, d);
         } catch (e) {
             throw("MiG-17 AB loading error. " + e)
         }
     };
-    geofs.debug.createMiG17Speedbrake = function() {
-       geofs.debug.MiG17Speedbrake = {};
-        geofs.debug.MiG17Speedbrake.model = new geofs.api.Model(mig17speedbrake)
+    geofs.debug.createfgr4Speedbrake = function() {
+       geofs.debug.fgr4Speedbrake = {};
+        geofs.debug.fgr4Speedbrake.model = new geofs.api.Model(fgr4speedbrake)
     }
-    geofs.debug.loadMiG17Speedbrake = function() {
-       geofs.debug.MiG17Speedbrake || geofs.debug.createMiG17Speedbrake()
+    geofs.debug.loadfgr4Speedbrake = function() {
+       geofs.debug.fgr4Speedbrake || geofs.debug.createfgr4Speedbrake()
         try {
             var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
                 d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
-            geofs.debug.MiG17Speedbrake.model.setPositionOrientationAndScale(c, d);
+            geofs.debug.fgr4Speedbrake.model.setPositionOrientationAndScale(c, d);
         } catch (e) {
             throw("MiG-17 speedbrake loading error. " + e)
         }
@@ -1476,17 +1476,17 @@ setInterval(
         geofs.debug.loadF18Cockpit()
       }
     
-      if (geofsAddonAircraft.isMig17 == 1 && geofs.animation.values.airbrakesTarget == 1) {
-        geofs.debug.loadMiG17Speedbrake()
+      if (geofsAddonAircraft.isfgr4 == 1 && geofs.animation.values.airbrakesTarget == 1) {
+        geofs.debug.loadfgr4Speedbrake()
       }
-      if (geofsAddonAircraft.isMig17 == 1 && geofs.animation.values.gearTarget == 0 && geofs.animation.values.view != "cockpit") {
-        geofs.debug.loadMiG17GearDown()
+      if (geofsAddonAircraft.isfgr4 == 1 && geofs.animation.values.gearTarget == 0 && geofs.animation.values.view != "cockpit") {
+        geofs.debug.loadfgr4GearDown()
       }
-      if (geofsAddonAircraft.isMig17 == 1 && geofs.animation.values.gearTarget == 1 && geofs.animation.values.view != "cockpit") {
-        geofs.debug.loadMiG17GearUp()
+      if (geofsAddonAircraft.isfgr4 == 1 && geofs.animation.values.gearTarget == 1 && geofs.animation.values.view != "cockpit") {
+        geofs.debug.loadfgr4GearUp()
       }
-      if (geofsAddonAircraft.isMig17 == 1 && geofs.animation.values.rpm >= 9100) {
-        geofs.debug.loadMiG17AB()
+      if (geofsAddonAircraft.isfgr4 == 1 && geofs.animation.values.rpm >= 9100) {
+        geofs.debug.loadfgr4AB()
       }
       if (geofsAddonAircraft.isE7 == 1) {
         geofs.debug.loadE7Antenna()
@@ -1807,18 +1807,18 @@ geofs.f18instruments = 0
 checkRunHornetInterval = setInterval(function(){runHornet()},10)
 
 //-----Mig-17 Fresco-----------------------------------------------------------------------------------------------------
-geofsAddonAircraft.isMig17 = 0
-geofsAddonAircraft.runMiG17 = function(){
+geofsAddonAircraft.isfgr4 = 0
+geofsAddonAircraft.runfgr4 = function(){
    console.log("Loading MiG-17. Model credit manilov.ap")
 }
-mig17Li = document.createElement("li");
-mig17Li.innerHTML = '<div><img src="https://finescale.com/~/media/images/workbench-reviews/2020/february-2020/fsmwb1219_zvezda_mig17_01.jpg">Mikoyan-Gurevich MiG-17 "Fresco"</div>';
-mig17Li.addEventListener("click", geofsAddonAircraft.runMiG17);
+fgr4Li = document.createElement("li");
+fgr4Li.innerHTML = '<div><img src="https://finescale.com/~/media/images/workbench-reviews/2020/february-2020/fsmwb1219_zvezda_fgr4_01.jpg">Mikoyan-Gurevich MiG-17 "Fresco"</div>';
+fgr4Li.addEventListener("click", geofsAddonAircraft.runfgr4);
 //this works actually
-mig17Li.setAttribute("data-aircraft", 3)
-mig17Li.setAttribute("data-livery", 1)
-document.getElementsByClassName("geofs-list geofs-toggle-panel geofs-aircraft-list")[0].appendChild(mig17Li)
-function runMiG17() {
+fgr4Li.setAttribute("data-aircraft", 3)
+fgr4Li.setAttribute("data-livery", 1)
+document.getElementsByClassName("geofs-list geofs-toggle-panel geofs-aircraft-list")[0].appendChild(fgr4Li)
+function runfgr4() {
    if (geofs.aircraft.instance.id == 3 && geofs.aircraft.instance.liveryId == 1) {
 geofs.aircraft.instance.definition.parts[3].area = 3
 geofs.aircraft.instance.definition.parts[4].area = 3
@@ -1835,17 +1835,17 @@ geofs.aircraft.instance.engines[1].afterBurnerThrust = 20000
 geofs.aircraft.instance.cockpitSetup.parts[1].object3d.model._model.color.alpha = 0
    }
 setTimeout(() => {
-   geofsAddonAircraft.isMig17 = 1
+   geofsAddonAircraft.isfgr4 = 1
 },5000)
 setTimeout(() => {
    geofs.aircraft.instance.definition.parts[0].animations[0].value = "rpm"
 	geofs.aircraft.instance.definition.parts[0].animations[0].gt = -1
 },10000)
    } else {
-geofsAddonAircraft.isMig17 = 0
+geofsAddonAircraft.isfgr4 = 0
    }
 }
-mig17Int = setInterval(function(){runMiG17()},100)
+fgr4Int = setInterval(function(){runfgr4()},100)
 
 //-----Su-27 Flanker (the OG one)---------------------------------------------------------------------------------------
 geofsAddonAircraft.isSu27 = new Boolean(0)
