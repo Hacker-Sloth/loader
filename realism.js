@@ -736,10 +736,10 @@ setInterval(
     var parachute = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/parachute-proper.glb"
     var rainEffect = "https://geo-fs.com/models/precipitations/rain.gltf"
     var f18Afterburner = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/geofsf-a18cafterburner.glb"
-    var f18GearUp = "https://raw.githubusercontent.com/Hacker-Sloth/c17/main/dodge_challenger_rt_scat_pack_widebody_free.glb"
-    var f18GearDown = "https://raw.githubusercontent.com/Hacker-Sloth/c17/main/dodge_challenger_rt_scat_pack_widebody_free.glb"
-    var f18Cockpit = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f-18-cockpit.glb"
-    var f18Airbrake = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f-18-airbrake.glb"
+    var f18GearUp = "https://raw.githubusercontent.com/Hacker-Sloth/c17/main/ka-52_war_thunder.glb"
+    var f18GearDown = "https://raw.githubusercontent.com/Hacker-Sloth/c17/main/ka-52_war_thunder.glb"
+    var f18Cockpit = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/ka-52-cockpit.glb"
+    var f18Airbrake = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/ka-52-airbrake.glb"
     var fgr4GearUp = "https://raw.githubusercontent.com/Hacker-Sloth/a10/refs/heads/main/scene.gltf"
     var fgr4GearDown = "https://raw.githubusercontent.com/Hacker-Sloth/a10/refs/heads/main/scene.gltf"
     var fgr4speedbrake = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-17-speedbrakes.glb"
@@ -1686,14 +1686,14 @@ geofsAddonAircraft.runFA18 = function(){
    geofs.aircraft.instance.change(18, 4)
 }
 f18Li = document.createElement("li");
-f18Li.innerHTML = '<div><img src="https://w7.pngwing.com/pngs/871/313/png-transparent-boeing-f-a-18e-f-super-hornet-mcdonnell-douglas-f-a-18-hornet-battlefield-3-rogerson-aircraft-corporation-airplane-boeing-767-video-game-fighter-aircraft-airplane.png">F/A-18C Hornet</div>';
+f18Li.innerHTML = '<div><img src="https://www.airforce-technology.com/wp-content/uploads/sites/6/2017/09/1l-image-26.jpg"> KA-52</div>';
 f18Li.addEventListener("click", geofsAddonAircraft.runFA18);
 document.getElementsByClassName("geofs-list geofs-toggle-panel geofs-aircraft-list")[0].appendChild(f18Li)
 
 geofs.f18instruments = new Boolean(0)
 //the actual implementation lol:
 function runHornet() {
-   if (geofs.aircraft.instance.id == 18 && geofs.aircraft.instance.liveryId == 4) {
+   if (geofs.aircraft.instance.id == 9 && geofs.aircraft.instance.liveryId == 1) {
 //removing the thrust vectoring
 geofs.aircraft.instance.definition.parts[46].animations[0].ratio = 0.069;
 geofs.aircraft.instance.definition.parts[46].animations[1].ratio = 0.069;
