@@ -1683,7 +1683,7 @@ console.log("Airborne")
 //adding the button
 geofsAddonAircraft.runFA18 = function(){
    console.log("Loading F/A-18C. Model credit cs09736. Model loaded under CC Attribution Share-Alike Liscense.")
-   geofs.aircraft.instance.change(18, 4)
+   geofs.aircraft.instance.change(9, 1)
 }
 f18Li = document.createElement("li");
 f18Li.innerHTML = '<div><img src="https://www.airforce-technology.com/wp-content/uploads/sites/6/2017/09/1l-image-26.jpg"> KA-52</div>';
